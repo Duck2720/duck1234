@@ -1,0 +1,35 @@
+import "./ConTact.scss";
+
+function Contact() {
+  return (
+    <div className="contact container">
+      <div className="row">
+        <div className="col-12 col-md-4 contact-Box">
+          <div className="box-info">
+            <div className="info-image">
+              <i className="fas fa-phone-alt" />
+            </div>
+            <h5>Call us 24x7</h5>
+            <p>0987 603 191</p>
+          </div>
+          <div className="box-info">
+            <div className="info-image">
+              <i className="fas fa-map-marker-alt" />
+            </div>
+            <h5>Headquarter</h5>
+            <p>Ha Noi</p>
+          </div>
+          <div className="box-info">
+            <div className="info-image">
+              <i className="fas fa-fax" />
+            </div>
+            <h5>Fax</h5>
+            <p>0987 603 191</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Contact;

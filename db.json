@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "_id": 1,
+      "name": "Orange",
+      "image": "https://dacsancamvinh.net/wp-content/uploads/2015/06/cong-dung-qua-cam.jpg",
+      " description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "price": 89,
+      "countInStock": 3,
+      " rating": 4,
+      " numReviews": 4
+    },
+    {
+      "_id": 2,
+      "name": "PineApple",
+      "image": "https://benh.vn/wp-content/uploads/2018/04/cach-chon-dua-ngon-benhvn.jpg",
+      " description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "price": 89,
+      "countInStock": 2,
+      " rating": 3,
+      " numReviews": 3
+    },
+    {
+      "_id": 3,
+      "name": "Grape",
+      "image": "https://cdn.eva.vn/upload/1-2019/images/2019-03-23/15-tac-dung-cua-qua-nho-doi-voi-suc-khoe-nho-khong-tot-cho-giam-can_veby_thumb-1553323405-933-width653height490.jpg",
+      " description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "price": 89,
+      "countInStock": 3,
+      " rating": 4,
+      " numReviews": 4
+    },
+    {
+      "_id": 4,
+      "name": "Watermelon",
+      "image": "https://photo-cms-tpo.zadn.vn/w890/Uploaded/2022/rwbvhvobvvimsb/2021_09_02/loi-ich-cua-dua-hau-2-5136.jpg",
+      " description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "price": 89,
+      "countInStock": 3,
+      " rating": 4,
+      " numReviews": 4
+    },
+    {
+      "_id": 5,
+      "name": "Coconut",
+      "image": "https://cafefcdn.com/thumb_w/650/203337114487263232/2021/7/31/photo1627699917850-16276999180562069545959.jpg",
+      " description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "price": 89,
+      "countInStock": 3,
+      " rating": 4,
+      " numReviews": 4
+    },
+    {
+      "_id": 6,
+      "name": "Litchi fruit",
+      "image": "https://vaithieu.net/wp-content/uploads/2017/11/vai-thieu-tuoi-luc-ngan.jpg",
+      " description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "price": 89,
+      "countInStock": 3,
+      " rating": 4,
+      " numReviews": 4
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@admin.com",
+      "password": "$2a$10$gRSxJu1vdMzufuasGgmGL.kUz/KRqi1OIzyTHGIDqL0fN5gySFDHC",
+      "id": 1
+    },
+    {
+      "email": "user@user.com",
+      "password": "$2a$10$N/qhj2PUb8318YGpMPQvN.8148qiJc8RYXIlRO0tFzgQdMA7lTsQW",
+      "id": 2
+    }
+  ]
+}
