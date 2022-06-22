@@ -1,0 +1,12 @@
+.input-group {
+  height: 50px;
+  width: 90%;
+  & .search-button {
+    width: 20%;
+    background-color: black;
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}

@@ -1,14 +1,46 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { registerUser } from "redux/api/apiRequest";
 
-function Register() {
-  window.scrollTo(0, 0);
+function Register(): JSX.Element {
+  const [usename, setUsename] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleRegister = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    const newUser = {
+      usename,
+      email,
+      password
+    };
+    registerUser(newUser, dispatch, navigate);
+  };
 
   return (
     <div className="container d-flex flex-column justify-content-center align-items-center login-center">
-      <form className="Login col-md-8 col-lg-4 col-11">
-        <input type="text" placeholder="Username" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+      <form
+        className="Login col-md-8 col-lg-4 col-11"
+        onSubmit={handleRegister}
+      >
+        <input
+          type="text"
+          placeholder="Username"
+          onChange={(e) => setUsename(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
         <button type="submit">Register</button>
         <p>

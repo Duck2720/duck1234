@@ -21,18 +21,6 @@
   & .navbar-brand img {
     width: 35%;
   }
-  & .input-group {
-    height: 50px;
-    width: 90%;
-    & .search-button {
-      width: 20%;
-      background-color: black;
-      color: white;
-      border: 0;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-  }
   & .badge {
     background-color: red;
     position: absolute;
@@ -48,20 +36,20 @@
     border-radius: 2px;
     margin: 0 15px;
   }
-  & .dropdown-menu {
-    background-color: black !important;
+  & .menu-auth {
     border: 0 !important;
-    padding: 0 !important;
     overflow: hidden;
-  }
-  & .dropdown-menu a {
-    padding: 10px 20px !important;
-    color: #ffffff !important;
-    margin: 0 !important;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: black;
+    background: #d8d8d8;
+    border-radius: 0.2rem;
     &:hover {
-      background-color: #1cb803 !important;
-      color: #ffffff !important;
     }
+  }
+  & .icon-bag {
+    color: black;
   }
 }
 .mobile-header {
