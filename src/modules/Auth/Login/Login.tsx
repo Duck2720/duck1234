@@ -1,62 +1,48 @@
 /* eslint-disable prettier/prettier */
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "redux/api/apiRequest";
 import "./Login.scss";
-import axios from "axios";
-
-interface User {
-  email: string;
-  password: string;
-}
+import { useDispatch } from "react-redux";
 
 function Login() {
   const [email, setEmail] = useState<string>("");
-  const [pwd, setPwd] = useState<string>("");
-  const [success, setSucces] = useState<Boolean>(false);
-  function handleAPI() {
-    axios.post("http://reques.in/api/login", {}).then((result) => {
-      console.log(result.data);
-    });
-    setSucces(true);
-  }
+  const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogin = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    const newUser = {
+      email,
+      password
+    };
+    loginUser(newUser, dispatch, navigate);
+  };
 
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      {success ? (
-        <div>
-          <h1>U are login</h1>
-          <br />
+      <div className="container d-flex flex-column justify-content-center align-items-center login-center">
+        <form className="Login col-md-8 col-lg-4 col-11" onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Login</button>
           <p>
-            <a href="#">Go to Home</a>
+            <Link to={"/register"}>Create Account</Link>
           </p>
-        </div>
-      ) : (
-        <div className="container d-flex flex-column justify-content-center align-items-center login-center">
-          <form className="Login col-md-8 col-lg-4 col-11">
-            <input
-              value={email}
-              type="email"
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              value={pwd}
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setPwd(e.target.value)}
-              required
-            />
-            <button type="submit" onClick={handleAPI}>
-              Login
-            </button>
-            <p>
-              <Link to={"/register"}>Create Account</Link>
-            </p>
-          </form>
-        </div>
-      )}
+        </form>
+      </div>
     </>
   );
 }
