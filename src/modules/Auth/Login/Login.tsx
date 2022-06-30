@@ -3,14 +3,13 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "redux/api/apiRequest";
 import "./Login.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const handleLogin = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const newUser = {

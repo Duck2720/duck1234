@@ -7,4 +7,5 @@ export default interface IData {
   price: number;
   rating: number;
   value: string;
+  countInStock: number;
 }

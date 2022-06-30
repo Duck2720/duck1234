@@ -5,14 +5,13 @@ const productSlice = createSlice({
   initialState: {
     products: {
       allProducts: [],
-      productsContainer: [],
       isFetching: false,
       error: false
     }
   },
   reducers: {
     filteredProducts: (state, action) => {
-      state.products.allProducts = state.products.productsContainer.filter(
+      state.products.allProducts = state.products.allProducts.filter(
         (product: any) => product.name.toLowerCase().includes(action.payload)
       );
     },
@@ -22,7 +21,6 @@ const productSlice = createSlice({
     getProductsSuccess: (state, action) => {
       state.products.isFetching = false;
       state.products.allProducts = action.payload;
-      state.products.productsContainer = action.payload;
     },
     getProductsError: (state) => {
       state.products.isFetching = false;

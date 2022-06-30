@@ -24,7 +24,7 @@ const Rating: React.FC<Props> = (props) => {
           value >= 2
             ? "fas fa-star"
             : value >= 1.5
-            ? "fas fa-star-half-alt"
+            ? 'fas fa-star-half-alt'
             : "far fa-star"
         }
       />

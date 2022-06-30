@@ -1,25 +1,30 @@
-import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./InputSearch.scss";
 import { filteredProducts } from "redux/features/products/productsSlice";
 
 function InputSearch() {
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
-  const filterProducts = () => {
-    dispatch(filteredProducts(inputRef.current?.value));
+  const filterProducts = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    dispatch(filteredProducts(input));
+    setInput("");
   };
   return (
     <div className="col-md-6 col-8 d-flex align-items-center">
       <form className="input-group">
         <input
-          type="search"
+          value={input}
           className="form-control rounded search"
           placeholder="Search by name"
-          ref={inputRef}
-          onChange={filterProducts}
+          onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit" className="search-button">
+        <button
+          type="submit"
+          className="search-button"
+          onClick={(e) => filterProducts(e)}
+        >
           Search
         </button>
       </form>
