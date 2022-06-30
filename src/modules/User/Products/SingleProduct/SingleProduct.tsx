@@ -1,25 +1,39 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import "./SingleProduct.scss";
 import IData from "types/product.detail";
 import Rating from "components/Rating/Rating";
+import { useDispatch } from "react-redux";
+import { addToCart } from "redux/features/Cart/CartSlice";
+import { toast } from "react-toastify";
 
 function SingleProduct() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { id } = useParams();
   const [product, setProduct] = useState<IData>();
+
+  // eslint-disable-next-line no-shadow
+  const handleAddToCart = (product: IData | undefined) => {
+    dispatch(addToCart(product));
+    navigate("/cart");
+  };
 
   const loadDatas = async () => {
     try {
       const response = await axios(`http://localhost:3000/posts/${id}`);
       setProduct(response.data);
     } catch (error) {
-      console.log("error");
+      toast.error("call api fail", {
+        position: "top-right"
+      });
     }
   };
   useEffect(() => {
     loadDatas();
   }, [id]);
+
   return (
     <div className="row">
       <div className="col-md-6">
@@ -45,6 +59,15 @@ function SingleProduct() {
                 text={`${product?.numReviews} reviews`}
               />
             </div>
+            {product?.countInStock! > 0 ? (
+              <button
+                type="button"
+                className="round-black-btn"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add To Cart
+              </button>
+            ) : null}
           </div>
         </div>
       </div>

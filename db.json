@@ -65,50 +65,28 @@
     {
       "email": "admin@admin.com",
       "password": "$2a$10$gRSxJu1vdMzufuasGgmGL.kUz/KRqi1OIzyTHGIDqL0fN5gySFDHC",
+      "usename": "admin",
+      "isAdmin": true,
       "id": 1
     },
     {
-      "email": "user@user.com",
-      "password": "$2a$10$N/qhj2PUb8318YGpMPQvN.8148qiJc8RYXIlRO0tFzgQdMA7lTsQW",
+      "email": "quy@quy.com",
+      "password": "$2a$10$y/Y9eles5sxlIE.jUek3se3CzpWjUXhM2YV7OzQHn088jbdDBfrp6",
+      "usename": "quy123",
+      "isAdmin": false,
       "id": 2
     },
     {
-      "email": "anime@gmail.com",
-      "password": "$2a$10$91XHyRQVCrE6lVAnWGmi4uZtB9fz7naUMsn7MI5PKZewNic7Y1mri",
+      "email": "duc@duc.com",
+      "password": "$2a$10$aWGtEEGDYgpcCaijEhnFW.qp2MXNBn4GOWBD9JTg/i3d6zRNE6mHy",
+      "usename": "duc123",
       "id": 3
     },
     {
-      "email": "Duck@gmail.com",
-      "password": "$2a$10$P91U9fdesZ3FrzsfKKBayeKyRcm/8zDWnuh4xxRwWlmRp8SV6rW9O",
+      "email": "ta@ta.com",
+      "password": "$2a$10$KJVuszETQT6L6vtFbikhO.oBmU9PlxSchYQi8eJvnpLsJCVTPD2AC",
+      "usename": "DucTa",
       "id": 4
-    },
-    {
-      "email": "Duc@Duc.com",
-      "password": "$2a$10$vfTsXARm6AdmxlBR591u0.TsTvZOjPFAmB6AM.Api.V0lEr6viXEC",
-      "id": 5
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$xPjGqGRQjdr2hS63ZvShWuranVoYxG1LmEHzkOfYAr/npdmwPKXMC",
-      "id": 6
-    },
-    {
-      "email": "Duck123@gmail.com",
-      "password": "$2a$10$N0.9VF6/ZUfNIbSwxD5AqO5jFV/nJchbbvAzJT/42zG0yY9pIFzZ2",
-      "usename": "Duck",
-      "id": 7
-    },
-    {
-      "email": "quy@quy.com",
-      "password": "$2a$10$WRggvVUJdSoDSBpufs42q.jMrj8Ss3c06jrsYEJbAjJonkq5nFLSi",
-      "usename": "phanquy",
-      "id": 8
-    },
-    {
-      "email": "Anhloc@gmail.com",
-      "password": "$2a$10$VIstwXY8NP3W3ixRVPKoheFq9Vj77Y3EPpyRHVJKs75YFIfH8f45y",
-      "usename": "AnhLoc",
-      "id": 9
     }
   ]
 }

@@ -1,10 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import InputSearch from "components/InputSearch/InputSearch";
+import { toast } from "react-toastify";
+import { clearCart } from "redux/features/Cart/CartSlice";
+import { logout } from "redux/features/auth/authSlice";
 
 function Header() {
-  const user = useSelector((state: any) => state.auth.login?.currentUser);
+  const dispatch = useDispatch();
+  const user: any = useSelector((state: any) => state.auth.login.currentUser);
+  const { cartTotalQuantity } = useSelector((state: any) => state.cart);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    toast.success("log out succes", {
+      position: "top-right"
+    });
+    dispatch(clearCart());
+    dispatch(logout());
+    navigate("/login");
+  };
   return (
     <div>
       {/* Top Header */}
@@ -48,19 +63,23 @@ function Header() {
                 </div>
                 <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
                   <div className="btn-group">
-                    {user ? (
+                    {user.user?.usename.length > 0 ? (
                       <>
                         <div className="">
-                          <Link className="menu-auth" to="/frofile">
-                            Frofile
+                          <Link className="menu-auth" to="/profile">
+                            hi...{user.user?.usename}
                           </Link>
-                          <Link className="menu-auth" to="/login">
+                          <Link
+                            className="menu-auth"
+                            to="/login"
+                            onClick={handleLogOut}
+                          >
                             Logout
                           </Link>
                         </div>
                         <Link to="">
                           <i className="fas fa-shopping-bag icon-bag" />
-                          <span className="badge">4</span>
+                          <span className="badge">{cartTotalQuantity}</span>
                         </Link>
                       </>
                     ) : (
@@ -71,10 +90,6 @@ function Header() {
                       </div>
                     )}
                   </div>
-                  <Link to="/cart" className="cart-mobile-icon">
-                    <i className="fas fa-shopping-bag" />
-                    <span className="badge">4</span>
-                  </Link>
                 </div>
                 <div className="col-12 d-flex align-items-center">
                   <form className="input-group">
@@ -102,19 +117,23 @@ function Header() {
               <InputSearch />
               <div className="col-md-3 d-flex align-items-center justify-content-end Login-Register">
                 <div className="btn-group">
-                  {user ? (
+                  {user.user?.usename.length > 0 ? (
                     <>
                       <div className="">
-                        <Link className="menu-auth" to="/frofile">
-                          Frofile
+                        <Link className="menu-auth" to="/profile">
+                          hi...{user.user?.usename}
                         </Link>
-                        <Link className="menu-auth" to="/login">
+                        <Link
+                          className="menu-auth"
+                          to="/login"
+                          onClick={handleLogOut}
+                        >
                           Logout
                         </Link>
                       </div>
-                      <Link to="">
+                      <Link to="/cart">
                         <i className="fas fa-shopping-bag icon-bag" />
-                        <span className="badge">4</span>
+                        <span className="badge">{cartTotalQuantity}</span>
                       </Link>
                     </>
                   ) : (
