@@ -10,6 +10,13 @@ import CartScreen from "modules/User/Cart/Cart";
 import Profile from "modules/User/Profile/ProfileDetail/Profile";
 import NotFound from "components/NotFound/NotFound";
 import AdminLayout from "layouts/admin.layout";
+import AdminUser from "modules/Admin/Users/AdminUser";
+import AddUsers from "modules/Admin/Users/AddUsers";
+import EditUsers from "modules/Admin/Users/EditUsers";
+import PrivateRoute from "utils/PrivateRoute";
+import ViewUsers from "modules/Admin/Users/ViewUsers";
+import OrderDetail from "modules/User/Order/OrderDetail";
+import OrderScreen from "modules/User/Order/Order";
 import ClienLayout from "./layouts/client.layout";
 import Login from "./modules/Auth/Login/Login";
 import Register from "./modules/Auth/Register/Register";
@@ -27,9 +34,19 @@ function App() {
           <Route path="/cart/" element={<CartScreen />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/order" element={<OrderScreen />} />
+          <Route path="/order-detail/:id" element={<OrderDetail />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="/admin" element={<AdminLayout />} />
+        <Route path="" element={<AdminLayout />}>
+          <Route index element={<Navigate to="/homeusers" />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/admin-users" element={<AdminUser />} />
+            <Route path="/add-users" element={<AddUsers />} />
+            <Route path="/edit-users/:id" element={<EditUsers />} />
+            <Route path="/users/:id" element={<ViewUsers />} />
+          </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

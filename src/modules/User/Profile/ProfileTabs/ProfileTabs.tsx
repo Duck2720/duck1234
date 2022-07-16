@@ -1,22 +1,31 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 function ProfileTabs() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const users = useSelector((state: any) => state.auth.login.currentUser.user);
   return (
     <form className="row  form-container">
       <div className="col-md-6">
         <div className="form">
           <label htmlFor="account-fn">UserName</label>
-          <input className="form-control" type="text" required />
+          <input
+            value={users.usename}
+            className="form-control"
+            type="text"
+            required
+          />
         </div>
       </div>
 
       <div className="col-md-6">
         <div className="form">
           <label htmlFor="account-email">E-mail Address</label>
-          <input className="form-control" type="email" required />
+          <input
+            value={users.email}
+            className="form-control"
+            type="email"
+            required
+          />
         </div>
       </div>
       <div className="col-md-6">

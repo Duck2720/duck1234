@@ -11,7 +11,7 @@ import {
 } from "redux/features/Cart/CartSlice";
 import Empty from "components/Empty/Empty";
 
-interface CartItem {
+export interface CartItems {
   cartQuantity: number;
   price: number;
   description: string;
@@ -25,24 +25,23 @@ const CartScreen = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state: any) => state.cart);
   const { cartTotalQuantity } = useSelector((state: any) => state.cart);
-
   useEffect(() => {
     dispatch(getTotals());
   }, [cart]);
 
   const hanldeRemoveCartItem = (
     e: { preventDefault: () => void },
-    cartItem: CartItem
+    cartItem: CartItems
   ) => {
     e.preventDefault();
     dispatch(removeFromCart(cartItem));
   };
 
-  const handleDecreaseCart = (cartItem: CartItem) => {
+  const handleDecreaseCart = (cartItem: CartItems) => {
     dispatch(decreaseCart(cartItem));
   };
 
-  const handleIncreaseCart = (cartItem: CartItem) => {
+  const handleIncreaseCart = (cartItem: CartItems) => {
     dispatch(addToCart(cartItem));
   };
 
@@ -71,7 +70,7 @@ const CartScreen = () => {
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {cart.cartItems?.map((cartItem: CartItem) => (
+            {cart.cartItems?.map((cartItem: CartItems) => (
               <div className="cart-item" key={cartItem.id}>
                 <div className="cart-product">
                   <img src={cartItem.image} alt={cartItem.name} />
@@ -122,7 +121,9 @@ const CartScreen = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button type="button">Check out</button>
+              <Link to="/order">
+                <button type="button">Check out</button>
+              </Link>
               <div className="start-shopping">
                 <Link to="/home">
                   <i className="fa-solid fa-arrow-left" />
