@@ -18,9 +18,6 @@ const CartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    // loadCart(state, action) {
-    //   state.cartItems = action.payload;
-    // },
     addToCart(state, action) {
       const itemIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
@@ -71,9 +68,6 @@ const CartSlice = createSlice({
       state.cartItems = [];
       state.cartTotalQuantity = 0;
       state.cartTotalAmount = 0;
-      toast.error("Toast clear", {
-        position: "top-right"
-      });
     },
 
     getTotals(state) {
@@ -99,13 +93,7 @@ const CartSlice = createSlice({
   }
 });
 
-export const {
-  addToCart,
-  removeFromCart,
-  decreaseCart,
-  clearCart,
-  getTotals,
-  // loadCart
-} = CartSlice.actions;
+export const { addToCart, removeFromCart, decreaseCart, clearCart, getTotals } =
+  CartSlice.actions;
 
 export default CartSlice.reducer;

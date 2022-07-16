@@ -123,6 +123,11 @@ function Header() {
                         <Link className="menu-auth" to="/profile">
                           hi...{user.user?.usename}
                         </Link>
+                        {user.user?.id === 1 ? (
+                          <Link className="menu-auth" to="/admin-users">
+                            go admin
+                          </Link>
+                        ) : null}
                         <Link
                           className="menu-auth"
                           to="/login"

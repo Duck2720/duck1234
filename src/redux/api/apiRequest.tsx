@@ -34,10 +34,10 @@ export const loginUser = async (
   try {
     const res = await axios.post("http://localhost:3000/login", user);
     dispatch(loginSuccess(res.data));
-    if (res.data.user.isAdmin === false) {
+    if (res.data.user.id !== 1) {
       navigate("/home");
     } else {
-      navigate("/admin");
+      navigate("/admin-users");
     }
   } catch (error) {
     dispatch(loginFailed());

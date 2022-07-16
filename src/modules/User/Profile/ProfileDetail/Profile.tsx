@@ -1,11 +1,19 @@
+import axios from "axios";
 import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import OrderProfile from "modules/User/Order/OrderProfile";
 import ProfileTabs from "../ProfileTabs/ProfileTabs";
 import "./Profile.scss";
 import userLogo from "../../../../assets/user.png";
 
 const Profile = () => {
+  const [datas, setDatas] = useState<any[]>([]);
+  function loadUsers() {
+    axios.get("http://localhost:3000/orders").then((res) => {
+      setDatas(res.data.reverse());
+    });
+  }
   const user: any = useSelector((state: any) => state.auth.login.currentUser);
-  console.log(user);
   window.scrollTo(0, 0);
   return (
     <div className="container mt-lg-5 mt-3">
@@ -45,6 +53,19 @@ const Profile = () => {
                 >
                   Profile Settings
                 </button>
+                <button
+                  className="nav-link d-flex justify-content-between"
+                  id="v-pills-profile-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#v-pills-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="v-pills-profile"
+                  aria-selected="false"
+                >
+                  Orders List
+                  {/* <span className="badge2"></span> */}
+                </button>
               </div>
             </div>
           </div>
@@ -60,14 +81,17 @@ const Profile = () => {
             id="v-pills-home"
             role="tabpanel"
             aria-labelledby="v-pills-home-tab"
-          />
-          <ProfileTabs />
+          >
+            <ProfileTabs />
+          </div>
           <div
             className="tab-pane fade"
             id="v-pills-profile"
             role="tabpanel"
             aria-labelledby="v-pills-profile-tab"
-          />
+          >
+            <OrderProfile />
+          </div>
         </div>
       </div>
     </div>
