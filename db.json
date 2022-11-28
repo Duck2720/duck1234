@@ -71,28 +71,12 @@
       "id": 1
     },
     {
-      "email": "duck@duck.com",
-      "password": "$2a$10$93K9Fty86RZfIubBRx1.nu7n5RTQahxVJV4t1rt07BVt0My1K6Oie",
-      "usename": "duck123",
+      "email": "viet@viet1.com",
+      "password": "$2a$10$I48AZOdkyTf2A.FTDx68Vul97L29Lh5X08rykE.fJX4a9kIlHPBn6",
+      "usename": "VietLOL",
       "phone": "123456789",
-      "address": "123456",
+      "address": "hanoi",
       "id": 2
-    },
-    {
-      "email": "long123@gmail.com",
-      "password": "$2a$10$uRRFpYOEn3JmTO0xviVLruTgdndPEYXWPNWRfxafazrqz6z45nOb6",
-      "usename": "long",
-      "phone": "123456",
-      "address": "ha noi",
-      "id": 3
-    },
-    {
-      "email": "asdsadas@gmail.com",
-      "password": "$2a$10$.J9TgP0fhmsuKIryUeyQOuCzoc/tU88SHd4QCMKJHsrhU7s4HptES",
-      "usename": "sdasd",
-      "phone": "12312",
-      "address": "123123",
-      "id": 4
     }
   ],
   "orders": [
@@ -946,6 +930,123 @@
       ],
       "total": 178,
       "id": 27
+    },
+    {
+      "name": "admin",
+      "email": "admin@admin.com",
+      "phone": "12345678",
+      "address": "cong hoa, nam sach, hai duong",
+      "orderDetail": [
+        {
+          "id": 2,
+          "name": "PineApple",
+          "image": "https://benh.vn/wp-content/uploads/2018/04/cach-chon-dua-ngon-benhvn.jpg",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          "price": 89,
+          "countInStock": 2,
+          "rating": 3,
+          "numReviews": 3,
+          "cartQuantity": 6
+        }
+      ],
+      "total": 534,
+      "id": 28
+    },
+    {
+      "name": "VietLOL",
+      "email": "viet@viet.com",
+      "phone": "123456789",
+      "address": "hanoi",
+      "orderDetail": [
+        {
+          "id": 1,
+          "name": "Orange",
+          "image": "https://dacsancamvinh.net/wp-content/uploads/2015/06/cong-dung-qua-cam.jpg",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          "price": 89,
+          "countInStock": 3,
+          "rating": 4,
+          "numReviews": 4,
+          "cartQuantity": 3
+        },
+        {
+          "id": 2,
+          "name": "PineApple",
+          "image": "https://benh.vn/wp-content/uploads/2018/04/cach-chon-dua-ngon-benhvn.jpg",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          "price": 89,
+          "countInStock": 2,
+          "rating": 3,
+          "numReviews": 3,
+          "cartQuantity": 1
+        }
+      ],
+      "total": 356,
+      "id": 29
+    },
+    {
+      "name": "VietLOL",
+      "email": "viet@viet.com",
+      "phone": "123456789",
+      "address": "hanoi",
+      "orderDetail": [
+        {
+          "id": 2,
+          "name": "PineApple",
+          "image": "https://benh.vn/wp-content/uploads/2018/04/cach-chon-dua-ngon-benhvn.jpg",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          "price": 89,
+          "countInStock": 2,
+          "rating": 3,
+          "numReviews": 3,
+          "cartQuantity": 2
+        },
+        {
+          "id": 4,
+          "name": "Watermelon",
+          "image": "https://photo-cms-tpo.zadn.vn/w890/Uploaded/2022/rwbvhvobvvimsb/2021_09_02/loi-ich-cua-dua-hau-2-5136.jpg",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          "price": 89,
+          "countInStock": 3,
+          "rating": 4,
+          "numReviews": 4,
+          "cartQuantity": 2
+        }
+      ],
+      "total": 356,
+      "id": 30
+    },
+    {
+      "name": "VietLOL",
+      "email": "viet@viet1.com",
+      "phone": "123456789",
+      "address": "hanoi",
+      "orderDetail": [
+        {
+          "id": 1,
+          "name": "Orange",
+          "image": "https://dacsancamvinh.net/wp-content/uploads/2015/06/cong-dung-qua-cam.jpg",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          "price": 89,
+          "countInStock": 3,
+          "rating": 4,
+          "numReviews": 4,
+          "cartQuantity": 2
+        },
+        {
+          "id": 2,
+          "name": "PineApple",
+          "image": "https://benh.vn/wp-content/uploads/2018/04/cach-chon-dua-ngon-benhvn.jpg",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          "price": 89,
+          "countInStock": 2,
+          "rating": 3,
+          "numReviews": 3,
+          "cartQuantity": 1
+        }
+      ],
+      "total": 267,
+      "id": 31
     }
   ]
 }
